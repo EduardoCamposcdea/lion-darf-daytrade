@@ -26,22 +26,32 @@ CUSTOM_CSS = """
         border: 1px solid rgba(225, 228, 236, 0.6) !important;
     }
 
-    /* Rótulos e textos gerais da calculadora */
-    .stApp p, 
-    .stApp span, 
-    .stApp label, 
-    .stApp h1, .stApp h2, .stApp h3, .stApp h4,
-    [data-testid="stWidgetLabel"], 
+    /* Rótulos e textos gerais */
+    .stApp p, .stApp span, .stApp label, .stApp h1, .stApp h2, .stApp h3, .stApp h4,
     [data-testid="stWidgetLabel"] *, 
-    [data-testid="stMarkdownContainer"] * {
-        color: #111A3A !important;
+    [data-testid="stMarkdownContainer"] p,
+    [data-testid="stMarkdownContainer"] span {
+        color: #111A3A;
     }
 
-    /* Exceção: Texto branco apenas dentro do Card Roxo do DARF */
-    .darf-card-hero, 
-    .darf-card-hero * {
+    /* CARD ROXO DO DARF (Garante fundo roxo e texto 100% branco) */
+    .darf-card-hero {
+        background: linear-gradient(135deg, #6331E8 0%, #4B1EC6 100%) !important;
+        border-radius: 18px !important;
+        padding: 1.8rem !important;
+        text-align: center !important;
+        box-shadow: 0 10px 25px rgba(99, 49, 232, 0.22) !important;
+        margin-top: 1rem !important;
+    }
+
+    .darf-card-hero,
+    .darf-card-hero *,
+    [data-testid="stMarkdownContainer"] .darf-card-hero * {
         color: #FFFFFF !important;
     }
+
+    .darf-card-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 1.2px; opacity: 0.9; text-transform: uppercase; }
+    .darf-card-amount { font-size: 2.8rem; font-weight: 800; margin: 0.2rem 0; }
 
     /* Cabeçalho e Marca */
     .brand-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; }
@@ -92,30 +102,24 @@ CUSTOM_CSS = """
         color: #111A3A !important;
     }
 
-    /* FORÇAR O FUNDO BRANCO E TEXTO ESCURO NA JANELA DE AJUDA */
-    div[role="dialog"],
-    div[role="dialog"] div,
-    div[data-baseweb="modal"],
-    div[data-baseweb="modal"] div,
-    div[data-testid="stDialog"],
-    div[data-testid="stDialog"] div {
+    /* ESTILIZAÇÃO DO MODAL (Somente na janela popup) */
+    div[role="dialog"] {
         background-color: #FFFFFF !important;
+        border-radius: 20px !important;
+        border: 1px solid #E1E4EC !important;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
     }
 
-    div[role="dialog"] *,
-    div[data-baseweb="modal"] *,
-    div[data-testid="stDialog"] * {
+    div[role="dialog"] * {
         color: #111A3A !important;
     }
 
-    div[role="dialog"] code,
-    div[data-testid="stDialog"] code {
+    div[role="dialog"] code {
         background-color: #F0EBFB !important;
         color: #6331E8 !important;
     }
 
-    div[role="dialog"] button[aria-label="Close"],
-    div[data-testid="stDialog"] button[aria-label="Close"] {
+    div[role="dialog"] button[aria-label="Close"] {
         color: #111A3A !important;
     }
 </style>
