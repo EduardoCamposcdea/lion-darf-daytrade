@@ -26,7 +26,7 @@ CUSTOM_CSS = """
         border: 1px solid rgba(225, 228, 236, 0.6) !important;
     }
 
-    /* Rótulos e textos gerais */
+    /* Rótulos e textos gerais da aplicação */
     .stApp p, .stApp span, .stApp label, .stApp h1, .stApp h2, .stApp h3, .stApp h4,
     [data-testid="stWidgetLabel"] *, 
     [data-testid="stMarkdownContainer"] p,
@@ -34,7 +34,7 @@ CUSTOM_CSS = """
         color: #111A3A;
     }
 
-    /* CARD ROXO DO DARF (Garante fundo roxo e texto 100% branco) */
+    /* CARD ROXO DO DARF */
     .darf-card-hero {
         background: linear-gradient(135deg, #6331E8 0%, #4B1EC6 100%) !important;
         border-radius: 18px !important;
@@ -102,24 +102,33 @@ CUSTOM_CSS = """
         color: #111A3A !important;
     }
 
-    /* ESTILIZAÇÃO DO MODAL (Somente na janela popup) */
-    div[role="dialog"] {
+    /* CORREÇÃO DO MODAL DE AJUDA: Força o fundo branco em todos os níveis */
+    div[data-testid="stDialog"],
+    div[data-testid="stDialog"] > div,
+    div[data-testid="stDialog"] > div > div,
+    div[role="dialog"],
+    section[role="dialog"],
+    div[data-baseweb="modal"],
+    div[data-baseweb="modal"] > div {
         background-color: #FFFFFF !important;
-        border-radius: 20px !important;
-        border: 1px solid #E1E4EC !important;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
-    }
-
-    div[role="dialog"] * {
+        background: #FFFFFF !important;
         color: #111A3A !important;
     }
 
+    div[data-testid="stDialog"] *,
+    div[role="dialog"] *,
+    section[role="dialog"] * {
+        color: #111A3A !important;
+    }
+
+    div[data-testid="stDialog"] code,
     div[role="dialog"] code {
         background-color: #F0EBFB !important;
         color: #6331E8 !important;
     }
 
-    div[role="dialog"] button[aria-label="Close"] {
+    div[data-testid="stDialog"] button,
+    div[role="dialog"] button {
         color: #111A3A !important;
     }
 </style>
