@@ -26,7 +26,7 @@ CUSTOM_CSS = """
         border: 1px solid rgba(225, 228, 236, 0.6) !important;
     }
 
-    /* REGRA PRINCIPAL: Força todos os textos e rótulos nativos a ficarem escuros */
+    /* Rótulos e textos gerais da aplicação */
     .stApp p, 
     .stApp span, 
     .stApp label, 
@@ -37,7 +37,7 @@ CUSTOM_CSS = """
         color: #111A3A !important;
     }
 
-    /* Exceção: Mantém o texto branco apenas dentro do Card Roxo do DARF */
+    /* Exceção: Texto branco dentro do Card Roxo do DARF */
     .darf-card-hero, 
     .darf-card-hero * {
         color: #FFFFFF !important;
@@ -62,11 +62,6 @@ CUSTOM_CSS = """
     .step-item.active .step-number { background: #6331E8; color: #FFFFFF !important; }
     .step-line { width: 30px; height: 2px; background: #E8ECEF; }
 
-    /* Card DARF */
-    .darf-card-hero { background: linear-gradient(135deg, #6331E8 0%, #4B1EC6 100%); border-radius: 18px; padding: 1.8rem; text-align: center; box-shadow: 0 10px 25px rgba(99, 49, 232, 0.22); margin-top: 1rem; }
-    .darf-card-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 1.2px; opacity: 0.85; text-transform: uppercase; }
-    .darf-card-amount { font-size: 2.8rem; font-weight: 800; margin: 0.2rem 0; }
-
     /* Caixas de Informação */
     .carry-over-box { background-color: #F8F9FE; border: 1px dashed #6331E8; border-radius: 14px; padding: 1rem 1.2rem; margin-top: 1rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
     .carry-over-title { font-size: 0.82rem; font-weight: 700; color: #111A3A !important; margin: 0; }
@@ -85,7 +80,7 @@ CUSTOM_CSS = """
     .feature-title { font-weight: 700; font-size: 0.85rem; color: #111A3A !important; margin: 0; }
     .feature-desc { font-size: 0.73rem; color: #79829A !important; margin: 0; }
 
-    /* Inputs e Botões (Ajuda / Resetar) */
+    /* Inputs e Botões */
     div[data-baseweb="input"] { border-radius: 12px !important; border: 1px solid #E1E4EC !important; background-color: #FAFAFC !important; }
     div[data-baseweb="input"] input { color: #111A3A !important; }
 
@@ -94,6 +89,36 @@ CUSTOM_CSS = """
         border: 1px solid #E1E4EC !important;
     }
     div[data-testid="stButton"] > button * {
+        color: #111A3A !important;
+    }
+
+    /* JANELA MODAL DE AJUDA: Fundo 100% claro e texto escuro */
+    div[role="dialog"], 
+    div[data-testid="stDialog"], 
+    div[data-testid="stModal"],
+    div[role="dialog"] > div {
+        background-color: #FFFFFF !important;
+        border-radius: 20px !important;
+        border: 1px solid #E1E4EC !important;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    div[role="dialog"] *, 
+    div[data-testid="stDialog"] *, 
+    div[data-testid="stModal"] * {
+        color: #111A3A !important;
+    }
+
+    /* Cor dos blocos de código/instruções dentro da ajuda */
+    div[role="dialog"] code,
+    div[data-testid="stDialog"] code {
+        background-color: #F0EBFB !important;
+        color: #6331E8 !important;
+    }
+
+    /* Botão de Fechar (X) */
+    div[role="dialog"] button[aria-label="Close"],
+    div[data-testid="stDialog"] button[aria-label="Close"] {
         color: #111A3A !important;
     }
 </style>
