@@ -4,8 +4,8 @@ CUSTOM_CSS = """
 
     html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
     #MainMenu, header, footer { visibility: hidden; }
-    
-    /* Força a aplicação e todas as regras a usarem o tema claro pretendido */
+
+    /* Fundo da Aplicação Principal */
     .stApp {
         background: linear-gradient(135deg, #F3F5FC 0%, #EAEFFC 50%, #F5F0FF 100%) !important;
         background-attachment: fixed !important;
@@ -18,6 +18,7 @@ CUSTOM_CSS = """
         max-width: 1100px !important;
     }
 
+    /* Cartões e Envolventes */
     div[data-testid="stVerticalBlockBorderWrapper"] {
         background: #FFFFFF !important;
         border-radius: 24px !important;
@@ -26,11 +27,12 @@ CUSTOM_CSS = """
         border: 1px solid rgba(225, 228, 236, 0.6) !important;
     }
 
-    /* Força os textos dos rótulos e campos a ficarem visíveis (escuros) */
+    /* Cor padrão para rótulos e textos gerais da página */
     label, p, span, div {
         color: #111A3A;
     }
 
+    /* Cabeçalho e Marca */
     .brand-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; }
     .brand-logo-icon { font-size: 2rem; background: #FFFFFF; padding: 6px 12px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
     .brand-title { font-weight: 800; font-size: 1.25rem; color: #111A3A !important; margin: 0; line-height: 1.1; }
@@ -41,6 +43,7 @@ CUSTOM_CSS = """
     .main-title span { color: #6331E8 !important; }
     .main-subtitle { text-align: center; color: #68718B !important; font-size: 0.95rem; margin-bottom: 2rem; }
 
+    /* Barra de Progresso (Stepper) */
     .stepper { display: flex; justify-content: center; align-items: center; gap: 1.2rem; margin-bottom: 2.5rem; background: #FAFAFC; padding: 12px 24px; border-radius: 16px; border: 1px solid #E1E4EC; }
     .step-item { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 600; color: #8C94A8 !important; }
     .step-item.active { color: #111A3A !important; }
@@ -48,21 +51,25 @@ CUSTOM_CSS = """
     .step-item.active .step-number { background: #6331E8; color: #FFFFFF !important; }
     .step-line { width: 30px; height: 2px; background: #E8ECEF; }
 
+    /* Card Principal de Resultado DARF */
     .darf-card-hero { background: linear-gradient(135deg, #6331E8 0%, #4B1EC6 100%); border-radius: 18px; padding: 1.8rem; text-align: center; color: #FFFFFF !important; box-shadow: 0 10px 25px rgba(99, 49, 232, 0.22); margin-top: 1rem; }
     .darf-card-hero * { color: #FFFFFF !important; }
     .darf-card-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 1.2px; opacity: 0.85; text-transform: uppercase; }
     .darf-card-amount { font-size: 2.8rem; font-weight: 800; margin: 0.2rem 0; }
 
+    /* Caixas de Acúmulo de Prejuízo */
     .carry-over-box { background-color: #F8F9FE; border: 1px dashed #6331E8; border-radius: 14px; padding: 1rem 1.2rem; margin-top: 1rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
     .carry-over-title { font-size: 0.82rem; font-weight: 700; color: #111A3A !important; margin: 0; }
     .carry-over-sub { font-size: 0.73rem; color: #68718B !important; margin: 0; }
     .carry-over-value { font-size: 1.25rem; font-weight: 800; color: #6331E8 !important; white-space: nowrap; flex-shrink: 0; text-align: right; }
 
+    /* Avisos e Alertas */
     .custom-alert { padding: 0.85rem 1.1rem; border-radius: 12px; font-size: 0.85rem; font-weight: 500; line-height: 1.4; display: flex; align-items: center; gap: 10px; margin-top: 1rem; }
     .custom-alert-warning { background-color: #FFF8E6; color: #8A5300 !important; border: 1px solid #FFE5A3; }
     .custom-alert-success { background-color: #E6F8EF; color: #0D6832 !important; border: 1px solid #B3ECC8; }
     .custom-alert-info { background-color: #EBF3FE; color: #1E40AF !important; border: 1px solid #BFDBFE; }
 
+    /* Rodapé */
     .trust-footer { text-align: center; color: #8C94A8 !important; font-size: 0.82rem; margin-top: 2rem; }
     .features-bar { background: #FFFFFF; border-radius: 20px; padding: 1.2rem 1.8rem; margin-top: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); border: 1px solid rgba(225, 228, 236, 0.6); display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
     .feature-item { display: flex; align-items: center; gap: 12px; }
@@ -70,9 +77,39 @@ CUSTOM_CSS = """
     .feature-title { font-weight: 700; font-size: 0.85rem; color: #111A3A !important; margin: 0; }
     .feature-desc { font-size: 0.73rem; color: #79829A !important; margin: 0; }
 
-    /* Ajuste dos inputs de número para ficarem com fundo claro e fonte escura */
+    /* Entradas Numéricas e Inputs */
     div[data-baseweb="input"] { border-radius: 12px !important; border: 1px solid #E1E4EC !important; background-color: #FAFAFC !important; }
     div[data-baseweb="input"] input { color: #111A3A !important; }
     div[data-baseweb="input"]:focus-within { border-color: #6331E8 !important; background-color: #FFFFFF !important; }
+
+    /* Modal / Pop-up de Ajuda (Dialogs) */
+    div[role="dialog"] {
+        background-color: #111A3A !important;
+        border-radius: 20px !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    div[role="dialog"] h1, 
+    div[role="dialog"] h2, 
+    div[role="dialog"] h3, 
+    div[role="dialog"] h4, 
+    div[role="dialog"] p, 
+    div[role="dialog"] li, 
+    div[role="dialog"] span,
+    div[role="dialog"] label {
+        color: #F3F4F6 !important;
+    }
+
+    div[role="dialog"] button[aria-label="Close"] {
+        color: #FFFFFF !important;
+    }
+
+    div[role="dialog"] code {
+        background-color: #1E293B !important;
+        color: #38BDF8 !important;
+        padding: 2px 6px !important;
+        border-radius: 6px !important;
+    }
 </style>
 """
