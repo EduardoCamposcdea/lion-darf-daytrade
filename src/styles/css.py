@@ -26,7 +26,7 @@ CUSTOM_CSS = """
         border: 1px solid rgba(225, 228, 236, 0.6) !important;
     }
 
-    /* Rótulos e textos gerais da aplicação */
+    /* Rótulos e textos gerais da calculadora */
     .stApp p, 
     .stApp span, 
     .stApp label, 
@@ -37,7 +37,7 @@ CUSTOM_CSS = """
         color: #111A3A !important;
     }
 
-    /* Exceção: Texto branco dentro do Card Roxo do DARF */
+    /* Exceção: Texto branco apenas dentro do Card Roxo do DARF */
     .darf-card-hero, 
     .darf-card-hero * {
         color: #FFFFFF !important;
@@ -80,7 +80,7 @@ CUSTOM_CSS = """
     .feature-title { font-weight: 700; font-size: 0.85rem; color: #111A3A !important; margin: 0; }
     .feature-desc { font-size: 0.73rem; color: #79829A !important; margin: 0; }
 
-    /* Inputs e Botões */
+    /* Inputs e Botões (Ajuda / Resetar) */
     div[data-baseweb="input"] { border-radius: 12px !important; border: 1px solid #E1E4EC !important; background-color: #FAFAFC !important; }
     div[data-baseweb="input"] input { color: #111A3A !important; }
 
@@ -92,31 +92,28 @@ CUSTOM_CSS = """
         color: #111A3A !important;
     }
 
-    /* JANELA MODAL DE AJUDA: Fundo 100% claro e texto escuro */
-    div[role="dialog"], 
-    div[data-testid="stDialog"], 
-    div[data-testid="stModal"],
-    div[role="dialog"] > div {
+    /* FORÇAR O FUNDO BRANCO E TEXTO ESCURO NA JANELA DE AJUDA */
+    div[role="dialog"],
+    div[role="dialog"] div,
+    div[data-baseweb="modal"],
+    div[data-baseweb="modal"] div,
+    div[data-testid="stDialog"],
+    div[data-testid="stDialog"] div {
         background-color: #FFFFFF !important;
-        border-radius: 20px !important;
-        border: 1px solid #E1E4EC !important;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
     }
 
-    div[role="dialog"] *, 
-    div[data-testid="stDialog"] *, 
-    div[data-testid="stModal"] * {
+    div[role="dialog"] *,
+    div[data-baseweb="modal"] *,
+    div[data-testid="stDialog"] * {
         color: #111A3A !important;
     }
 
-    /* Cor dos blocos de código/instruções dentro da ajuda */
     div[role="dialog"] code,
     div[data-testid="stDialog"] code {
         background-color: #F0EBFB !important;
         color: #6331E8 !important;
     }
 
-    /* Botão de Fechar (X) */
     div[role="dialog"] button[aria-label="Close"],
     div[data-testid="stDialog"] button[aria-label="Close"] {
         color: #111A3A !important;
