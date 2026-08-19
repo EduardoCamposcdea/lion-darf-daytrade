@@ -82,30 +82,21 @@ CUSTOM_CSS = """
     div[data-baseweb="input"] input { color: #111A3A !important; }
     div[data-baseweb="input"]:focus-within { border-color: #6331E8 !important; background-color: #FFFFFF !important; }
 
-    /* Modal / Pop-up de Ajuda (Dialogs) */
-    div[role="dialog"] {
+    /* Janela Modal (Dialogs) - Força texto 100% branco e visível */
+    div[role="dialog"], 
+    div[data-testid="stDialog"] {
         background-color: #111A3A !important;
         border-radius: 20px !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4) !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
     }
 
-    div[role="dialog"] h1, 
-    div[role="dialog"] h2, 
-    div[role="dialog"] h3, 
-    div[role="dialog"] h4, 
-    div[role="dialog"] p, 
-    div[role="dialog"] li, 
-    div[role="dialog"] span,
-    div[role="dialog"] label {
-        color: #F3F4F6 !important;
-    }
-
-    div[role="dialog"] button[aria-label="Close"] {
+    div[role="dialog"] *, 
+    div[data-testid="stDialog"] * {
         color: #FFFFFF !important;
     }
 
-    div[role="dialog"] code {
+    div[role="dialog"] code,
+    div[data-testid="stDialog"] code {
         background-color: #1E293B !important;
         color: #38BDF8 !important;
         padding: 2px 6px !important;
